@@ -1,6 +1,6 @@
 public class User {
 
-    String login = "john";
+    String login = "John123";
     String email = "test@test.com";
 
     public User(){
@@ -14,18 +14,17 @@ public class User {
 
     public String countLogin(String login){
         String str = new String(login);
-        if ( str.length() > 5)
-            return login;
-        else return "Слишком короткое наименование логина";
+        if ( str.length() < 5)
+            return "Login must contain at least 5 characters";
+        else return login;
     }
 
     public String checkEmail(String email){
-        String s = email , sub = "@";
-        String res = "Введите правильный потовый адре";
-        if (s.contains(sub))
-        return res = email;
+        String s = email , sub = "@",point = ".";
+        if (s.contains(sub) && s.contains(point) )
+        return  email;
         else
-        return res;
+        return "Incorrect email";
     }
 
 
